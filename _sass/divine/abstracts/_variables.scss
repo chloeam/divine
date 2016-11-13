@@ -1,0 +1,119 @@
+/*
+ * STYLE VARIABLES
+ * Everything you would want to customize is in this file
+ */
+
+// BREAKPOINTS
+// Automatically converted from px to ems
+$breakpoints: (
+  break-xs: 0,
+  break-s: 640,
+  break-m: 800,
+  break-l: 1024,
+  break-xl: 1600
+) !default;
+
+// Max width
+// The widest the content will go, even at the largest screen
+$max-width: 1200px !default;
+
+// DEFAULT CONTAINER WIDTHS
+// The maximum widths of the main content at each breakpoint
+$container-widths: (
+  container-xs: 95%,
+  container-s: 90%,
+  container-m: 85%,
+  container-l: 80%,
+  container-xl: 75%
+) !default;
+
+// VERTICAL RHYTHM
+// You're essentially setting line-height here, as well as vertical margins
+// One per breakpoint (above)
+$spreads: (
+  spread-xs: 12,
+  spread-s: 14,
+  spread-m: 16,
+  spread-l: 18,
+  spread-xl: 20
+) !default;
+
+// TYPOGRAPHY
+$body-type: 'Vollkorn', serif !default;
+$heading-type: 'Montserrat', sans-serif !default;
+$code-type: 'Menlo', monospace !default;
+$caption-type: $heading-type !default;
+$button-type: $heading-type !default;
+
+$heading-weight: 700 !default;
+
+// OTHER CUSTOMIZATION
+
+// Border radius for elements such as buttons and modules
+$border-radius: 5px !default;
+
+// Default transition for things like link and thumbnail hovers
+// To remove, set to none
+$default-transition: all 0.2s ease-in-out !default;
+
+// COLORS
+
+// Basic colors
+$white: #fff !default;
+$black: #000 !default;
+$gray: #7D7D7D !default;
+$gray-light: lighten($gray, 30%) !default;
+$gray-xlight: lighten($gray, 50%) !default;
+$gray-dark: darken($gray, 25%) !default;
+
+// Site colors
+$primary-color: #788ED6 !default;
+$secondary-color: #F0E489 !default;
+
+// UI colors
+$background-color: #fcfcfc !default;
+$text-color: #494949 !default;
+$heading-color: $text-color !default;
+$caption-color: $gray-light !default;
+$link-color: $primary-color !default;
+$hover-color: darken($primaryColor, 10%) !default;
+$button-color: $link-color !default;
+$button-hover-color: $hover-color !default;
+$button-text-color: $white !default;
+
+$success-color: #6cc644 !default;
+$info-color: #358BDB !default;
+$warning-color: #ff9933 !default;
+$error-color: #bd2c00 !default;
+
+// Brand colors (for button and icon use)
+$behance-color: #1769FF;
+$codepen-color: $white;
+$dribbble-color: #ea4c89;
+$facebook-color: #3b5998;
+$github-color: #171516;
+$google-plus-color: #dd4b39;
+$instagram-color: #517fa4;
+$linkedin-color: #007bb6;
+$pinterest-color: #cb2027;
+$rss-color: #fa9b39;
+$soundcloud-color: #ff3300;
+$stackoverflow-color: #fe7a15;
+$tumblr-color: #32506d;
+$twitter-color: #55acee;
+$vimeo-color: #1ab7ea;
+$vine-color: #00bf8f;
+$youtube-color: #bb0000;
+
+// Code colors
+$code-background-color: #F5F4F2 !default;
+$highlight-default: #655f6d !default;
+$highlight-comment: #8b8792 !default;
+$highlight-red: #be4678 !default;
+$highlight-orange: #f5871f !default;
+$highlight-yellow: #eab700 !default;
+$highlight-green: #2a9292 !default;
+$highlight-aqua: #398bc6 !default;
+$highlight-blue: #576ddb !default;
+$highlight-purple: #955ae7 !default;
+$highlight-linenumbers: #ccc !default;
