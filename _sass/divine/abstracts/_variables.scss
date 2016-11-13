@@ -76,7 +76,7 @@ $text-color: #494949 !default;
 $heading-color: $text-color !default;
 $caption-color: $gray-light !default;
 $link-color: $primary-color !default;
-$hover-color: darken($primaryColor, 10%) !default;
+$hover-color: darken($primary-color, 10%) !default;
 $button-color: $link-color !default;
 $button-hover-color: $hover-color !default;
 $button-text-color: $white !default;

@@ -9,7 +9,7 @@ $numberof-breakpoints: length($breakpoints);
 @mixin larger-than($break) {
   // Retrieves value from map and converts to ems
   $value: map-get($breakpoints, $break);
-  $value-in-ems: #{$value / 16 * 1em}
+  $value-in-ems: #{$value / 16 * 1em};
 
   // If the breakpoint exists in the map
   @if $value != null {
