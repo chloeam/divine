@@ -1,0 +1,49 @@
+# Welcome to Divine, the elegant, interactive theme for Jekyll
+#
+# Divine was made by Chloe Atchue-Mamlet
+# http://chloeam.com
+# https://github.com/chloeam/divine
+#
+# This config file is meant for settings that affect your entire site
+# You should be able to set this up once and rarely change the values after
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# `jekyll serve`. If you change this file, please restart the server process.
+
+# Site settings
+language: "en"
+title: "Divine"
+title_separator: "|"
+description: "This is where the site description goes. It should be approximately 160 characters"
+url: # the base hostname and protocol for your site e.g. "http://chloeam.com"
+base_url: # the subpath of your site e.g. "/blog". Don't change unless you know you should
+repository: # github username/repo-name where source code can be found
+google_analytics_code:
+disqus_username:
+
+# Site author
+author:
+  name: "Chloe Atchue-Mamlet"
+  avatar: # path to author's photo
+  bio: "I am literally the greatest person to ever live"
+  location: "Philadelphia, PA"
+  email: "chloe793@gmail.com"
+  behance:
+  codepen:
+  dribbble:
+  facebook:
+  github:
+  google_plus:
+  instagram:
+  linkedin:
+  pinterest:
+  soundcloud:
+  stackoverflow:
+  tumblr:
+  twitter:
+  vine:
+  youtube:
+
+# Jekyll settings
+markdown: kramdown
+permalink: /:categories/:title/
