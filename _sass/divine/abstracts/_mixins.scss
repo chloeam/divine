@@ -1,9 +1,14 @@
-// Variables
+// VARIABLES
 
 // Number of breakpoints
 $numberof-breakpoints: length($breakpoints);
 
-// Media Queries
+// Turning maps into lists
+$breaks: map-values($breakpoints);
+$roots: map-values($spreads);
+
+
+// MEDIA QUERIES
 
 // Recommended media query: uses min-width for mobile-first development
 @mixin larger-than($break) {
@@ -22,5 +27,20 @@ $numberof-breakpoints: length($breakpoints);
   // If the breakpoint doesn't exist in the map
   @else {
     @warn "That breakpoint does not exist. Make sure you use one from the breakpoints map in _variables.scss";
+  }
+}
+
+
+// RESPONSIVE ROOT FONT SIZES
+
+@mixin root-size {
+  // Set root font size for smallest screen size
+  font-size: nth($roots, 1) / 16 * 100%;
+
+  // Loop through breakpoints and set root font size for each one
+  @for $i from 2 through $numberof-breakpoints {
+    @media screen and (min-width: nth($breaks, $i) / 16 * 1em) {
+      font-size: nth($roots, $i) / 16 * 100%;
+    }
   }
 }
