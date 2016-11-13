@@ -1,0 +1,16 @@
+// import scss partials
+
+@import 'divine/abstracts/variables';
+@import 'divine/abstracts/mixins';
+
+@import 'divine/base/reset';
+@import 'divine/base/typography';
+
+@import 'divine/layout/header';
+@import 'divine/layout/footer';
+
+@import 'divine/components/buttons';
+
+@import 'divine/pages/home';
+@import 'divine/pages/about';
+@import 'divine/pages/contact';
