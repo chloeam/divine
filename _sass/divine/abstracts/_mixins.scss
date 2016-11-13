@@ -1,0 +1,26 @@
+// Variables
+
+// Number of breakpoints
+$numberof-breakpoints: length($breakpoints);
+
+// Media Queries
+
+// Recommended media query: uses min-width for mobile-first development
+@mixin larger-than($break) {
+  // Retrieves value from map and converts to ems
+  $value: map-get($breakpoints, $break);
+  $value-in-ems: #{$value / 16 * 1em}
+
+  // If the breakpoint exists in the map
+  @if $value != null {
+    // Prints a media query based on the value
+    @media screen and (min-width: $value-in-ems) {
+      @content;
+    }
+  }
+
+  // If the breakpoint doesn't exist in the map
+  @else {
+    @warn "That breakpoint does not exist. Make sure you use one from the breakpoints map in _variables.scss";
+  }
+}
