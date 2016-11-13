@@ -3,6 +3,9 @@
 @import 'divine/abstracts/variables';
 @import 'divine/abstracts/mixins';
 
+@import 'divine/vendor/bourbon/bourbon';
+@import 'divine/vendor/neat/neat';
+
 @import 'divine/base/reset';
 @import 'divine/base/typography';
 
