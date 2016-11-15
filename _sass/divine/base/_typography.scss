@@ -1,3 +1,7 @@
 html {
   @include root-size;
 }
+
+body {
+  @include font-size(zeta);
+}

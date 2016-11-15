@@ -106,11 +106,13 @@ $scale-maps: map-keys($modular-scale);
     }
   }
   // if fontsize is a modular scale value
-  @else if map-has-key($scale-xs, $fontsize) {
+  @else if map-has-key(map-get($modular-scale, scale-xs), $fontsize) {
     // loop through breakpoints >= given breakpoint
     @for $i from $given-breakpoint-index through $numberof-breakpoints {
       $specific-scale-map: nth($scale-maps, $i); // scale-m
-      $fontsize-value: deep-map-get($modular-scale, $specific-scale-map, $fontsize); // 18
+      // $fontsize-value: deep-map-get($modular-scale, "#{$specific-scale-map}", "#{$fontsize}"); // 18
+      // $fontsize-value: deep-map-get($modular-scale, "scale-m", "zeta");
+      $fontsize-value: map-get(map-get($modular-scale, $specific-scale-map), $fontsize); //works, but hacky
 
       @include larger-than($given-breakpoint) {
         font-size: $fontsize-value * 1px;
