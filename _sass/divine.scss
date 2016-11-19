@@ -1,21 +1,27 @@
 // import scss partials
 
+// Vendor code
+@import 'divine/vendor/bourbon/bourbon';
+@import 'divine/vendor/neat/neat';
+
+// Abstracts (tools)
 @import 'divine/abstracts/variables';
 @import 'divine/abstracts/modular-scale';
 @import 'divine/abstracts/mixins';
 
-@import 'divine/vendor/bourbon/bourbon';
-@import 'divine/vendor/neat/neat';
-
+// Base
 @import 'divine/base/reset';
 @import 'divine/base/typography';
 @import 'divine/base/base';
 
+// Layout
 @import 'divine/layout/header';
 @import 'divine/layout/footer';
 
+// Components
 @import 'divine/components/buttons';
 
+// Pages
 @import 'divine/pages/home';
 @import 'divine/pages/about';
 @import 'divine/pages/contact';

@@ -19,7 +19,7 @@ $roots: map-values($spreads);
 
   // If the breakpoint exists in the map
   @if $value != null {
-    $value-in-ems: #{$value / 16 * 1em};
+    $value-in-ems: em($value);
     // Prints a media query based on the value
     @media screen and (min-width: $value-in-ems) {
       @content;
@@ -52,40 +52,6 @@ $roots: map-values($spreads);
 
 // FONT SIZES
 
-// Loop through breakpoints higher than the given one and assign font size
-// @function size-assignment($breakpoint, $pxs) {
-//   @for $i from $breakpoint through $numberof-breakpoints {
-//     @include larger-than($breakpoint) { // doesn't work yet
-//       font-size: $pxs / 16 * 1rem;
-//     };
-//   };
-// };
-
-// @include font-size(zeta, m) -> sets zeta size for m breakpoint and up
-// @include font-size(20, l) -> sets font size at 20px converted to rems for l+
-
-// @mixin font-size($fontsize, $breakpoint: xs) {
-//   // Type of variables inputted
-//   $font-type: type-of($fontsize);
-//   $scope-type: type-of($breakpoint);
-//
-//   // If $fontsize is a modular scale key
-//   @if map-has-key($scale-xs, $fontsize) {
-//     $convertto-break: break-#{$breakpoint}; //break-m
-//     $breakpoint-index: index($break-names, $convertto-break); //3
-//     $font-pixels: map-get($scale-#{$breakpoint}, $fontsize); //18
-//     // Loop through breakpoints equal to and larger than one specified
-//     @for $i from $breakpoint-index through $numberof-breakpoints { //3-5
-//       @include larger-than(nth($break-names, $i)) { //>break-m
-//         font-size: $font-pixels / 16 * 1em;
-//       };
-//     };
-//   };
-//
-//   @else if $font-type == number {
-//
-//   };
-
 // STATUS: NOT WORKING
 @function map-deep-get($map, $keys...) {
   @each $key in $keys {
@@ -99,7 +65,7 @@ $roots: map-values($spreads);
 // $roots: map-values($spreads);
 $scale-maps: map-keys($modular-scale);
 
-// STATUS: NOT WORKING
+// STATUS: WORKING for pix values, not for ems
 
 // @include font-size(zeta) -> font size: zeta for all breakpoints
 // @include font-size(zeta, m) -> font-size: zeta for break-m and up
