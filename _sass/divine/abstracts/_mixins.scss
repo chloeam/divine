@@ -11,14 +11,15 @@ $roots: map-values($spreads);
 
 // MEDIA QUERIES
 
+// STATUS: WORKING
 // Recommended media query: uses min-width for mobile-first development
 @mixin larger-than($break) {
   // Retrieves value from map and converts to ems
   $value: map-get($breakpoints, $break);
-  $value-in-ems: #{$value / 16 * 1em};
 
   // If the breakpoint exists in the map
   @if $value != null {
+    $value-in-ems: #{$value / 16 * 1em};
     // Prints a media query based on the value
     @media screen and (min-width: $value-in-ems) {
       @content;
@@ -31,9 +32,12 @@ $roots: map-values($spreads);
   }
 }
 
+// want to do @mixin at-breakpoing($break) for specific breakpoints
+
 
 // RESPONSIVE ROOT SIZES
 
+// STATUS: WORKING
 @mixin root-size {
   // Set root font size for smallest screen size
   font-size: nth($roots, 1) / 16 * 100%;
@@ -82,11 +86,7 @@ $roots: map-values($spreads);
 //
 //   };
 
-// $breaks: map-values($breakpoints);
-// $break-names: map-keys($breakpoints);
-// $roots: map-values($spreads);
-$scale-maps: map-keys($modular-scale);
-
+// STATUS: NOT WORKING
 @function map-deep-get($map, $keys...) {
   @each $key in $keys {
     $map: map-get($map, $key);
@@ -94,6 +94,16 @@ $scale-maps: map-keys($modular-scale);
   @return $map;
 }
 
+// $breaks: map-values($breakpoints);
+// $break-names: map-keys($breakpoints);
+// $roots: map-values($spreads);
+$scale-maps: map-keys($modular-scale);
+
+// STATUS: NOT WORKING
+
+// @include font-size(zeta) -> font size: zeta for all breakpoints
+// @include font-size(zeta, m) -> font-size: zeta for break-m and up
+// @include font-size(22, l) -> font-size: 22px for break-l and up
 @mixin font-size($fontsize, $breakpoint: xs) {
   // variables
   $given-breakpoint: break-#{$breakpoint};
@@ -114,7 +124,7 @@ $scale-maps: map-keys($modular-scale);
       // $fontsize-value: deep-map-get($modular-scale, "scale-m", "zeta");
       $fontsize-value: map-get(map-get($modular-scale, $specific-scale-map), $fontsize); //works, but hacky
 
-      @include larger-than($given-breakpoint) {
+      @include larger-than(nth($break-names, $i)) {
         font-size: $fontsize-value * 1px;
       }
     }
@@ -123,6 +133,7 @@ $scale-maps: map-keys($modular-scale);
     @warn "#{$fontsize} is not a valid font size. Please choose either a modular scale value or a pixel value."
   }
 }
+
 
 
   // Assign given breakpoint
