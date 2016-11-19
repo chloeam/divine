@@ -1,38 +1,86 @@
 html {
   @include root-size;
-  background: $background-color;
+
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
 }
 
 body {
   @include font-size(zeta);
   line-height: 2rem;
   font-family: $body-type;
-  color: $text-color;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: $heading-type;
   font-weight: $heading-weight;
+  color: $heading-color;
+  font-feature-settings: 'kern' 1, 'dlig' 1, 'liga' 1, 'lnum' 1;
+}
+
+h1, %alpha {
+  @include font-size(alpha);
+  line-height: 3rem;
+  margin-bottom: 1rem;
+}
+
+h2, %beta {
+  @include font-size(beta);
+  line-height: 3rem;
+  margin-bottom: 1rem;
+}
+
+h3, %gamma {
+  @include font-size(gamma);
+  line-height: 3rem;
+  margin-bottom: 1rem;
+}
+
+h4, %delta {
+  @include font-size(delta);
+}
+
+h5, %epsilon {
+  @include font-size(epsilon);
+}
+
+h6, %zeta {
+  @include font-size(zeta);
 }
 
 p {
   margin-bottom: 2rem;
+  font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
+}
+
+em {
+  font-style: italic;
+}
+
+strong {
+  font-weight: bold;
 }
 
 a {
-  background-image: linear-gradient(to bottom,rgba(0, 0, 0, 0) 50%,lighten($link-color,10%) 50%);
-  background-position: 0 80%;
-  background-repeat: repeat-x;
-  text-decoration: none;
-  background-size: 100% 0.15rem;
   color: $link-color;
-  text-shadow: 0.1rem 0 $background-color,
-               0.15rem 0 $background-color,
-              -0.1rem 0 $background-color,
-              -0.15rem 0 $background-color;
+  text-decoration: none;
+  transition: $default-transition;
 
-  &:hover {
+  &:hover, &:active, &:focus {
     color: $hover-color;
     text-decoration: none;
   }
 }
+
+.caption  {
+  @include font-size(theta);
+  font-family: $caption-type;
+  color: $caption-color;
+}
+
+// Better spacing for captions
+h1 + .caption, .alpha + .caption, h2 + .caption, .beta + .caption, h3 + .caption, .gamma + .caption {
+  margin-top: -1rem;
+}
+
+// add: nice underlines for text links, maybe
