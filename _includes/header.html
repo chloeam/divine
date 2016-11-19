@@ -1,6 +1,11 @@
 <header>
-  <h1>{{ site.title }}</h1>
-  <nav>
+  <h1><a href="/">{{ site.title }}</a></h1>
+  <div id="burger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <nav class="main-nav">
     <ul>
       {% for link in site.data.nav %}
         {% if link.title == page.title %}

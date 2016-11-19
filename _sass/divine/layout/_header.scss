@@ -1,3 +1,90 @@
 header {
   @include outer-container;
+  padding: 2rem 0;
+
+  h1 {
+    @include font-size(gamma);
+    font-family: $body-type;
+    @include span-columns(9);
+    @include shift(1);
+
+    @include larger-than($header-breakpoint) {
+      @include span-columns(4);
+    }
+  }
+
+  nav {
+    display: none;
+    background-color: $link-color;
+
+    ul {
+      @include span-columns(10);
+      @include shift(1);
+    }
+
+    li {
+      @include larger-than($header-breakpoint) {
+        display: inline-block;
+        float: right;
+        margin-left: 2rem;
+        @include font-size(theta);
+      }
+    }
+
+    a {
+      line-height: 3rem;
+    }
+
+    @include larger-than($header-breakpoint) {
+      display: block;
+      @include span-columns(6);
+      background-color: transparent;
+    }
+  }
+}
+
+#burger {
+  position: relative;
+  max-width: 33px;
+  height: 14px;
+  @include span-columns(1);
+  cursor: pointer;
+  top: 0.7rem; // magic number
+
+  @include larger-than($header-breakpoint) {
+    display: none;
+  }
+
+  span {
+    background: $primary-color;
+    height: 2px;
+    width: 100%;
+    position: absolute;
+  }
+
+  span:first-child {
+    top: 0;
+  }
+
+  span:nth-child(2) {
+    top: 7px;
+  }
+
+  span:last-child {
+    top: 14px;
+  }
+
+  &.is-open {
+    span:first-child {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    span:nth-child(2) {
+      opacity: 0;
+    }
+
+    span:last-child {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+  }
 }

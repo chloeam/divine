@@ -12,7 +12,7 @@
 
 # Site settings
 language: "en"
-title: "Divine"
+title: "Divine Framework"
 title_separator: "|"
 description: "This is where the site description goes. It should be approximately 160 characters"
 url: # the base hostname and protocol for your site e.g. "http://chloeam.com"

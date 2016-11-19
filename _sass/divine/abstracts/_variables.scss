@@ -50,6 +50,9 @@ $heading-weight: 700 !default;
 
 // OTHER CUSTOMIZATION
 
+// Breakpoint at which header turns from hamburger toggle to "regular"
+$header-breakpoint: break-m;
+
 // Border radius for elements such as buttons and modules
 $border-radius: 5px !default;
 
