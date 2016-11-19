@@ -1,5 +1,5 @@
 /*
- * STYLE VARIABLES
+ * VARIABLES
  * Everything you would want to customize is in this file
  */
 
@@ -21,11 +21,11 @@ $max-width: 1200px !default;
 // DEFAULT CONTAINER WIDTHS
 // The maximum widths of the main content at each breakpoint
 $container-widths: (
-  container-xs: 95%,
-  container-s: 90%,
-  container-m: 85%,
-  container-l: 80%,
-  container-xl: 75%
+  container-xs: 90%,
+  container-s: 85%,
+  container-m: 80%,
+  container-l: 75%,
+  container-xl: 70%
 ) !default;
 
 // VERTICAL RHYTHM

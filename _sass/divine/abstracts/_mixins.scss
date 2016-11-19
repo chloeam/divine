@@ -34,6 +34,20 @@ $roots: map-values($spreads);
 
 // want to do @mixin at-breakpoing($break) for specific breakpoints
 
+// Container widths
+// STATUS: WORKING BUT NOT COMPLETELY TESTED
+$container-list: map-keys($container-widths);
+
+@mixin set-container() {
+  @for $i from 1 through $numberof-breakpoints {
+    $specific-width-value: map-get($container-widths, nth($container-list, $i));
+
+    @include larger-than(nth($break-names, $i)) {
+      @include outer-container($specific-width-value);
+    }
+  }
+}
+
 
 // RESPONSIVE ROOT SIZES
 

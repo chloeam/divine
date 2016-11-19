@@ -9,3 +9,7 @@ body {
   color: $text-color;
   overflow-x: hidden;
 }
+
+.container {
+  @include set-container;
+}
