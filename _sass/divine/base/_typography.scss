@@ -61,7 +61,8 @@ strong {
   font-weight: bold;
 }
 
-a {
+// Select all the anchors without a button class
+a:not(.button) {
   color: $link-color;
   text-decoration: none;
   transition: $default-transition;

@@ -1,0 +1,35 @@
+@mixin btn($btn-color) {
+  display: inline-block;
+  background-color: $btn-color;
+  color: $button-text-color;
+  padding: 0.5rem 2rem;
+  border-radius: $border-radius;
+  text-decoration: none;
+  font-family: $button-type;
+  margin-bottom: 2rem;
+  @include font-size(theta);
+
+  &:hover {
+    background-color: darken($btn-color, 5%);
+  }
+}
+
+.button {
+  @include btn($button-color);
+}
+
+.button.info {
+  @include btn($info-color);
+}
+
+.button.success {
+  @include btn($success-color);
+}
+
+.button.warning {
+  @include btn($warning-color);
+}
+
+.button.error {
+  @include btn($error-color);
+}
