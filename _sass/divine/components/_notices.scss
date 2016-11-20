@@ -1,0 +1,45 @@
+@mixin establish-notice($color) {
+  background-color: tint($color, 80%);
+  border-left: 15px solid $color;
+  border-radius: $border-radius;
+  padding: 1rem 2rem 1rem 2rem;
+  margin-bottom: 2rem;
+
+  h4 {
+    @include font-size(epsilon);
+  }
+
+  p {
+    margin-bottom: 0;
+    // @include font-size(eta);
+    // line-height: 1.5rem;
+  }
+
+  a {
+    @include establish-link($color);
+  }
+
+  code {
+    background-color: tint($color, 40%);
+  }
+}
+
+.notice {
+  @include establish-notice($gray);
+}
+
+.notice.info {
+  @include establish-notice($info-color);
+}
+
+.notice.success {
+  @include establish-notice($success-color);
+}
+
+.notice.warning {
+  @include establish-notice($warning-color);
+}
+
+.notice.error {
+  @include establish-notice($error-color);
+}

@@ -38,6 +38,7 @@ h3, %gamma {
 
 h4, %delta {
   @include font-size(delta);
+  // margin-bottom: 1rem;
 }
 
 h5, %epsilon {
@@ -61,35 +62,38 @@ strong {
   font-weight: bold;
 }
 
-// Select all the anchors without a button class
-a:not(.button) {
-  color: $link-color;
-  text-decoration: none;
-  transition: $default-transition;
-  position: relative;
-  transition: all 0.15s ease-out;
-  &:before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    bottom: 1px;
-    left: 0;
-    background: $hover-color;
-    visibility: hidden;
-    transform: scaleX(0);
-    transition: all 0.2s ease-in-out 0s;
-  }
-  &:hover, &:active, &:focus {
-    transition: all 0.15s ease-out;
-    color: $hover-color;
-    text-decoration: none;
-    &:before {
-        visibility: visible;
-        transform: scaleX(1);
-    }
-  }
+a {
+  @include establish-link($link-color);
 }
+// Select all the anchors without a button class
+// a:not(.button) {
+//   color: $link-color;
+//   text-decoration: none;
+//   transition: $default-transition;
+//   position: relative;
+//   transition: all 0.15s ease-out;
+//   &:before {
+//     content: "";
+//     position: absolute;
+//     width: 100%;
+//     height: 2px;
+//     bottom: 1px;
+//     left: 0;
+//     background: $hover-color;
+//     visibility: hidden;
+//     transform: scaleX(0);
+//     transition: all 0.2s ease-in-out 0s;
+//   }
+//   &:hover, &:active, &:focus {
+//     transition: all 0.15s ease-out;
+//     color: $hover-color;
+//     text-decoration: none;
+//     &:before {
+//         visibility: visible;
+//         transform: scaleX(1);
+//     }
+//   }
+// }
 
 .caption  {
   @include font-size(theta);
