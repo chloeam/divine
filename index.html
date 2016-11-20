@@ -42,13 +42,22 @@ title: Portfolio
 
   <blockquote><p>Fuga rerum laboris officia cupidatat, excepteur aliquid ut quis facere, cumque harum optio dignissimos. Duis repellat tempore dolor blanditiis alias impedit officiis ut&nbsp;consectetur.</p></blockquote>
 
-  <pre>
-    <code>
-      body {
-        color: blue;
-      }
-    </code>
-  </pre>
+  {% highlight scss linenos %}
+  @mixin btn($btn-color) {
+    display: inline-block;
+    background-color: $btn-color;
+    color: $button-text-color;
+    padding: 0.5rem 2rem;
+    border-radius: $border-radius;
+    text-decoration: none;
+    font-family: $button-type;
+    margin-bottom: 2rem;
+    @include font-size(theta);
+
+    &:hover {
+      background-color: darken($btn-color, 5%);
+    }
+  }{% endhighlight %}
 
   <h4>Quibusdam illum quo</h4>
 

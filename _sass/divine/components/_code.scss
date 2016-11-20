@@ -1,0 +1,15 @@
+tt, code, kbd, samp, pre {
+  font-family: $code-type;
+  @include font-size(theta);
+  background-color: $code-background-color;
+  border-radius: $border-radius;
+}
+
+// .highlight {
+//   margin-bottom: 2rem;
+// }
+
+.highlight>pre {
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
