@@ -1,0 +1,38 @@
+#hero {
+  background-image: url(https://static.pexels.com/photos/132800/pexels-photo-132800.jpeg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  height: 22rem;
+  color: $white;
+  margin-bottom: 3rem;
+  padding: 3rem;
+  padding-top: 7rem;
+
+  h1 {
+    color: $white;
+    @include font-size(100);
+    font-family: $body-type;
+    font-style: italic;
+  }
+
+  p {
+    font-family: $heading-type;
+  }
+}
+
+#info {
+  @include outer-container;
+
+  div {
+    @include span-columns(12);
+
+    @include larger-than(break-m) {
+      @include span-columns(4);
+    }
+  }
+
+  h2 {
+    @include font-size(epsilon);
+  }
+}
