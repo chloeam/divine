@@ -12,5 +12,5 @@ body {
 
 .container {
   // @include set-container;
-  @include outer-container;
+  @include set-container;
 }

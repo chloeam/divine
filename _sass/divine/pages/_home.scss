@@ -5,8 +5,7 @@
   background-position: center;
   height: 22rem;
   color: $white;
-  margin-bottom: 3rem;
-  padding: 3rem;
+  margin-bottom: 5rem;
   padding-top: 7rem;
 
   h1 {
@@ -22,7 +21,8 @@
 }
 
 #info {
-  @include outer-container;
+
+  margin-bottom: 5rem;
 
   div {
     @include span-columns(12);
